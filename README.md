@@ -14,7 +14,7 @@ Use jsxgraph,svelte
 2. 网络画板 不开源
 3. inRm3D 作者不开发了 不开源
 4. GeoGebra 没有自定义函数功能
-5. Mathematica 不开源
+5. Mathematica 不开源，交互写起来麻烦
 
 WIP
 
@@ -31,7 +31,10 @@ jsxgraph 本身是一个 js 库，直接交给用户文本可以最大限度减�
 
 - [ ] 代码高亮（🕊）
 - [ ] 导出图形文件（.html）（🕊）
-- [ ] 让用户自己增加按钮（🕊）
+- [ ] 让用户自己增加/修改按钮（🕊）
+- [ ] 导出导入配置（🕊）
+
+Below is the original readme
 
 ---
 
