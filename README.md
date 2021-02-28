@@ -4,7 +4,7 @@
 
 Yet another tool to draw geometry online. In very early stage.
 
-Use jsxgraph,svelte
+Use [jsxgraph](https://jsxgraph.uni-bayreuth.de/wp/index.html),svelte
 
 ## Why not other tools
 
@@ -26,12 +26,13 @@ jsxgraph 本身是一个 js 库，直接交给用户文本可以最大限度减�
 
 1. 点击按键插入文本
 2. 修改对象默认值
+3. 自定义增删改命令
+4. 预设 demo
 
 ## TODO
 
 - [ ] 代码高亮（🕊）
 - [ ] 导出图形文件（.html）（🕊）
-- [ ] 让用户自己增加/修改按钮（🕊）
 - [ ] 导出导入配置（🕊）
 
 Below is the original readme

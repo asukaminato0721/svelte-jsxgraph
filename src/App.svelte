@@ -1,6 +1,8 @@
 <script>
   import insertTextAtCursor from "insert-text-at-cursor";
-  let textareaContent = "var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-20, 10, 20, -10], axis:true});\n";
+  import InfinitySquare from "./examples/InfinitySquare.js";
+  import Moonwalk from "./examples/Moonwalk.js"
+  let textareaContent = "var board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true});\n";
   let addCommand="";
   let itemList = [
    {cmd:"let segment = board.create('segment', [p1, p2]);"},
@@ -24,7 +26,10 @@
 <!-- https://support.microsoft.com/en-us/topic/how-to-remove-underlines-from-hyperlinks-that-use-frontpage-2003-4702ea91-395a-38d7-9cf7-04672ada2bbc -->
 <a style="text-decoration:none" href="https://github.com/wuyudi/svelte-jsxgraph">click to return github repository</a>
 <h3>choose command</h3>
-
+<button on:click={() =>{ textareaContent=InfinitySquare;eval(InfinitySquare)}}>InfinitySquare</button>
+<button on:click={() =>{ textareaContent=Moonwalk;eval(Moonwalk)}}>Moonwalk</button>
+<button on:click={() =>{ textareaContent=`var board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true});`;
+eval(textareaContent);}}>init</button><br/>
 {#each itemList as item}
   <label>  <input type="text" bind:value={item.cmd} size="140"/><button on:click={() =>
     insertTextAtCursor(document.getElementById("jscode"), item.cmd+ "\n")}
@@ -39,17 +44,14 @@
 <textarea
   id="jscode"
   name="jscode"
-  rows="4"
-  cols="160"
+  rows="8"
+  cols="140"
   bind:value={textareaContent}
 />
 <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
 
-
 <button on:click={() => {eval(document.getElementById('injected').innerHTML)}}>
   rerender
 </button>
-
-
-<div id="box" class="jxgbox" style="width:600px; height:300px;"></div>
+<div id="jxgbox" class="jxgbox" style="width:600px; height:600px;"></div>
 {@html "<script type='text/javascript' id='injected'>" + textareaContent + "</script>"}
