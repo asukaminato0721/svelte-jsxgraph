@@ -1,6 +1,6 @@
 # svelte-jsxgraph
 
-[demo](https://wuyudi.github.io/svelte-jsxgraph)
+[demo](https://wuyudi.github.io/svelte-jsxgraph/)
 
 Yet another tool to draw geometry online. In very early stage.
 
