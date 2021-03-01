@@ -10,15 +10,13 @@
   placeholder="type command or choose from right"
   bind:value={addCommand}
 />
-
 <select bind:value={addCommand}>
   {#each templates as template}
-    <option value={template.cmd}>
-      {template.itemName}
+    <option value={template[1]}>
+      {template[0]}
     </option>
   {/each}
 </select>
-
 <button
   on:click={() => {
     itemList = [...itemList, { cmd: addCommand }];

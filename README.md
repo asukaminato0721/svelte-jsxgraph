@@ -2,7 +2,7 @@
 
 [demo](https://wuyudi.github.io/svelte-jsxgraph/)
 
-Yet another tool to draw geometry online. In very early stage.
+Yet another tool to draw geometry online. ~~In very early stage.~~ Nearly finished.
 
 Use [jsxgraph](https://jsxgraph.uni-bayreuth.de/wp/index.html),svelte
 
@@ -28,11 +28,12 @@ jsxgraph 本身是一个 js 库，直接交给用户文本可以最大限度减�
 2. 修改对象默认值
 3. 自定义增删改命令
 4. 预设 demo
+5. 预设指令模板
+6. 导出图形文件（.html）
 
 ## TODO
 
 - [ ] 代码高亮（🕊）
-- [ ] 导出图形文件（.html）（🕊）
 - [ ] 导出导入配置（🕊）
 
 Below is the original readme

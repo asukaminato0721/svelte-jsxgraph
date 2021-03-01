@@ -20,7 +20,7 @@
 
 <AddCommand bind:itemList={itemList}/>
 
-  <textarea
+<textarea
   id="jscode"
   name="jscode"
   rows="8"
