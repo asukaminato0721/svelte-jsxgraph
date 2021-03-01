@@ -2,6 +2,8 @@
   import insertTextAtCursor from "insert-text-at-cursor";
   import InfinitySquare from "./examples/InfinitySquare.js";
   import Moonwalk from "./examples/Moonwalk.js"
+  import saveTextAsFile from "./functions/saveTextAsFile.js";
+  import makeJsToHtml from "./functions/makeJsToHtml.js";
   let textareaContent = "var board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true});\n";
   let addCommand="";
   let itemList = [
@@ -70,3 +72,4 @@ currentContent = textareaContent;}}>
 </button>
 <div id="jxgbox" class="jxgbox" style="width:600px; height:600px;"></div>
 {@html "<script type='text/javascript' id='injected'>" + textareaContent + "</script>"}
+<button on:click={() => saveTextAsFile(makeJsToHtml( textareaContent),"file.html")}>download as file</button>
