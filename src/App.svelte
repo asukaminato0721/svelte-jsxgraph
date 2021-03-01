@@ -10,6 +10,11 @@
    {cmd:"let conic = board.create('conic',[A,B,C,D,E]);"},
    {cmd:"let point = board.create('point', [1.0, 1.0]);"},
   ];
+  let templates = [
+    {itemName:"circle",cmd:"let circle = board.create('circle', [p1, p2]);"},
+    {itemName:"conic",cmd:"let conic = board.create('conic', [A,B,C,D,E])"}
+  ];
+  let currentContent = "";
 </script>
 
 <svelte:head>
@@ -31,17 +36,26 @@
 <button on:click={() =>{ textareaContent=`var board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true});`;
 eval(textareaContent);}}>init</button><br/>
 {#each itemList as item}
-  <label>  <input type="text" bind:value={item.cmd} size="140"/><button on:click={() =>
+  <label>  <input type="text" bind:value={item.cmd} size="120"/><button on:click={() =>
     insertTextAtCursor(document.getElementById("jscode"), item.cmd+ "\n")}
   >insert command</button>
 <button on:click={() => {itemList=itemList.filter(x=>x.cmd !== item.cmd);}}>delete</button>
   </label><br/>
 {/each}
 
-<input type="text" size="150" placeholder="type your own command" bind:value={addCommand}/><button on:click={
+<input type="text" size="120" placeholder="type your own command" bind:value={addCommand}/><select bind:value={addCommand}>
+		{#each templates as template}
+			<option value={template.cmd}>
+				{template.itemName}
+			</option>
+		{/each}
+	</select><button on:click={
 ()=>{itemList=[...itemList,{cmd:addCommand}];addCommand="";}
 }>click to add</button>
-<textarea
+
+
+
+  <textarea
   id="jscode"
   name="jscode"
   rows="8"
@@ -50,8 +64,9 @@ eval(textareaContent);}}>init</button><br/>
 />
 <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
 
-<button on:click={() => {eval(document.getElementById('injected').innerHTML)}}>
-  rerender
+<button on:click={() => {eval(document.getElementById('injected').innerHTML);
+currentContent = textareaContent;}}>
+ {currentContent === textareaContent ? 'don\'t need to click': 'click to render'}
 </button>
 <div id="jxgbox" class="jxgbox" style="width:600px; height:600px;"></div>
 {@html "<script type='text/javascript' id='injected'>" + textareaContent + "</script>"}
