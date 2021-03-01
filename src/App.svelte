@@ -1,13 +1,11 @@
 <script>
   import insertTextAtCursor from "insert-text-at-cursor";
-  import saveTextAsFile from "./functions/saveTextAsFile.js";
-  import InfinitySquare from "./examples/InfinitySquare.js";
-  import Moonwalk from "./examples/Moonwalk.js";
-  import makeJsToHtml from "./functions/makeJsToHtml.js";
-  import {_itemList,templates,textareaContent} from "./constants/preDefine.js";
+  import AddCommand from "./components/AddCommand.svelte";
+  import Demo from './components/Demo.svelte'
   import CurrentCommand from './components/CurrentCommand.svelte';
+  import SaveToFile from './components/SaveToFile.svelte';
+  import {_itemList,textareaContent} from "./constants/preDefine.js";
   let itemList = _itemList;
-  let addCommand="";
   let currentContent = textareaContent; // current content is in textarea
 </script>
 
@@ -16,42 +14,11 @@
 >click to return github repository</a>
 <h3>choose command</h3>
 
-<button
-  on:click={() => {
-    currentContent = InfinitySquare;
-    eval(InfinitySquare);
-  }}>InfinitySquare</button
->
-<button
-  on:click={() => {
-    currentContent = Moonwalk;
-    eval(Moonwalk);
-  }}>Moonwalk</button
->
-<button
-  on:click={() => {
-    currentContent = textareaContent;
-    eval(currentContent);
-  }}>init</button
-><br />
+<Demo bind:currentContent={currentContent}/><br />
 
 <CurrentCommand itemList={itemList}/>
 
-<input type="text"
- size="120"
-  placeholder="type command or choose from right"
-   bind:value={addCommand}/>
-
-   <select
-    bind:value={addCommand}>
-		{#each templates as template}
-			<option value={template.cmd}>
-				{template.itemName}
-			</option>
-		{/each}
-	</select><button on:click={
-()=>{itemList=[...itemList,{cmd:addCommand}];addCommand="";}
-}>click to add</button>
+<AddCommand bind:itemList={itemList}/>
 
   <textarea
   id="jscode"
@@ -66,6 +33,4 @@
 }}>click to render</button>
 <div id="jxgbox" class="jxgbox" style="width:600px; height:600px;"></div>
 {@html "<script type='text/javascript' id='injected'>" + currentContent + "</script>"}
-<button on:click={
-() => saveTextAsFile(makeJsToHtml( currentContent),"file.html")
-}>download as file</button>
+<SaveToFile currentContent={currentContent}/>
