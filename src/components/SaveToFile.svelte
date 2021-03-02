@@ -5,16 +5,20 @@
   let currentFileName = "";
 </script>
 
-<input
-  type="text"
-  bind:value={currentFileName}
-  placeholder="input file name,default is 'file.html'"
-  size="50"
-/>
-<button
-  on:click={() =>
-    saveTextAsFile(
-      makeJsToHtml(currentContent),
-      (currentFileName || "file") + ".html"
-    )}>download as {currentFileName || "file"}.html</button
->
+<div class="input-group mb-3">
+  <input
+    type="text"
+    bind:value={currentFileName}
+    class="form-control"
+    placeholder="input file name,default is 'file.html'"
+    size="50"
+  />
+  <button
+    class="btn btn-outline-secondary"
+    on:click={() =>
+      saveTextAsFile(
+        makeJsToHtml(currentContent),
+        (currentFileName || "file") + ".html"
+      )}>download as {currentFileName || "file"}.html</button
+  >
+</div>

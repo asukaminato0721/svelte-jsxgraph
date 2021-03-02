@@ -7,18 +7,21 @@
 </script>
 
 <button
+  class="btn btn-primary"
   on:click={() => {
     currentContent = InfinitySquare;
     eval(InfinitySquare);
   }}>InfinitySquare</button
 >
 <button
+  class="btn btn-primary"
   on:click={() => {
     currentContent = Moonwalk;
     eval(Moonwalk);
   }}>Moonwalk</button
 >
 <button
+  class="btn btn-primary"
   on:click={() => {
     currentContent = textareaContent;
     eval(currentContent);

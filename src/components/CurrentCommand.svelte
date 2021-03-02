@@ -4,16 +4,19 @@
 </script>
 
 {#each itemList as item}
-  <label>
-    <input type="text" bind:value={item.cmd} size="120" /><button
-      on:click={() =>
-        insertTextAtCursor(document.getElementById("jscode"), item.cmd + "\n")}
-      >insert command</button
-    >
-    <button
-      on:click={() => {
-        itemList = itemList.filter((x) => x.cmd !== item.cmd);
-      }}>delete</button
-    >
-  </label><br />
+  <div class="input-group">
+    <input type="text" bind:value={item.cmd} class="form-control" />
+  </div>
+  <button
+    class="btn btn-outline-secondary"
+    on:click={() =>
+      insertTextAtCursor(document.getElementById("jscode"), item.cmd + "\n")}
+    >insert command</button
+  >
+  <button
+    class="btn btn-outline-secondary"
+    on:click={() => {
+      itemList = itemList.filter((x) => x.cmd !== item.cmd);
+    }}>delete</button
+  >
 {/each}
