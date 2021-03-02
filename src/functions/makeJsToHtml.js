@@ -16,6 +16,16 @@ function makeJsToHtml(text) {
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/jsxgraph@1.1.0/distrib/jsxgraph.css"
     />
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="./jsxgraphcore.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./jsxgraph.css"
+    />
     <title>jsxgraph file</title>
   </head>
   <body>
