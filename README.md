@@ -29,12 +29,12 @@ jsxgraph 本身是一个 js 库，直接交给用户文本可以最大限度减�
 3. 自定义增删改命令
 4. 预设 demo
 5. 预设指令模板
-6. 导出图形文件（.html）
+6. 导出图形文件（.html/.zip）
+7. 保存，载入配置
 
 ## TODO
 
 - [ ] 代码高亮（🕊）
-- [ ] 导出导入配置（🕊）
 
 Below is the original readme
 
