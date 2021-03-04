@@ -17,8 +17,7 @@
 </svelte:head>
 
 <!-- https://support.microsoft.com/en-us/topic/how-to-remove-underlines-from-hyperlinks-that-use-frontpage-2003-4702ea91-395a-38d7-9cf7-04672ada2bbc -->
-<a style="text-decoration:none" href="https://github.com/wuyudi/svelte-jsxgraph"
->click to return github repository</a><br/>
+<a class="btn btn-primary"href="https://github.com/wuyudi/svelte-jsxgraph"> github repository</a>
 <Demo bind:currentContent={currentContent}/><br />
 
 <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
@@ -28,7 +27,7 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-5">
       <CurrentCommand itemList={itemList}/>
       <textarea class="form-control"
       style="height: 200px"
@@ -39,7 +38,7 @@
 <button  class="btn btn-primary" on:click={() => {eval(document.getElementById('injected').innerHTML);
 }}>click to render</button>
 		</div>
-      <div class="col-md-8" >
+      <div class="col-md-7" >
         <div id="jxgbox" class="jxgbox" style="width:800px; height:600px;">
         </div>
 		</div>

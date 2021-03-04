@@ -1,8 +1,12 @@
 <script>
   export let itemList;
+  import SaveLoadConfig from "./SaveLoadConfig.svelte";
   import insertTextAtCursor from "insert-text-at-cursor";
 </script>
 
+<!-- in App.svelte , I can't get itemList to change,
+   but I find in this components,it changes -->
+<SaveLoadConfig bind:itemList />
 {#each itemList as item}
   <div class="input-group">
     <input type="text" bind:value={item.cmd} class="form-control" />
