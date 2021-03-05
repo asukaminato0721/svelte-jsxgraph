@@ -29,10 +29,12 @@ let preTemplates = [
                     );`,
   `var p2 = board.create('glider', [2.0, 1.5, c1]);`,
   `var ineq_greater = board.create('inequality', [f], {inverse: true, fillColor: 'yellow'});`,
+  `var perp1 = board.create('perpendicularsegment', [l1, p3]);`,
+  `var l1 = board.create('segment', [p1, p2]);`,
 ];
 // generate needed format
 export let templates = Array.from(
   preTemplates.map((e) => [e.split("(")[1].split(",")[0].slice(1, -1), e])
 );
 export let textareaContent =
-  "let board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true});\n";
+  "let board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true, keepaspectratio:true});\n";
