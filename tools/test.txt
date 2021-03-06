@@ -1,0 +1,745 @@
+symbols/Angle.html
+// Create an angle out of three free points
+var p1 = board.create('point', [5.0, 3.0]),
+    p2 = board.create('point', [1.0, 0.5]),
+    p3 = board.create('point', [1.5, 5.0]),
+
+    a = board.create('angle', [p1, p2, p3]),
+    t = board.create('text', [4, 4, function() { return JXG.toFixed(a.Value(), 2); }]);
+
+symbols/Arc.html
+// Create an arc out of three free points
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+var p3 = board.create('point', [3.5, 1.0]);
+
+var a = board.create('arc', [p1, p2, p3]);
+board.create('text',[1,6,function(){return 'arclength: '+Math.round(a.Value()*100)/100}])
+
+symbols/Arrow.html
+list index out of range
+symbols/Line.html
+// Create a line using point and coordinates/
+// The second point will be fixed and invisible.
+var p1 = board.create('point', [4.5, 2.0]);
+var l1 = board.create('line', [p1, [1.0, 1.0]]);
+
+symbols/Line.html#straightFirst
+// Create a line using point and coordinates/
+// The second point will be fixed and invisible.
+var p1 = board.create('point', [4.5, 2.0]);
+var l1 = board.create('line', [p1, [1.0, 1.0]]);
+
+symbols/Line.html#straightLast
+// Create a line using point and coordinates/
+// The second point will be fixed and invisible.
+var p1 = board.create('point', [4.5, 2.0]);
+var l1 = board.create('line', [p1, [1.0, 1.0]]);
+
+symbols/Line.html#lastArrow
+// Create a line using point and coordinates/
+// The second point will be fixed and invisible.
+var p1 = board.create('point', [4.5, 2.0]);
+var l1 = board.create('line', [p1, [1.0, 1.0]]);
+
+symbols/Arrowparallel.html
+// Create a parallel
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var l1 = board.create('line', [p1, p2]);
+
+var p3 = board.create('point', [3.0, 3.0]);
+var pl1 = board.create('arrowparallel', [l1, p3]);
+
+symbols/Axis.html
+// Create an axis providing two coord pairs.
+  var l1 = board.create('axis', [[0.0, 1.0], [1.0, 1.3]]);
+
+symbols/Bisector.html
+var p1 = board.create('point', [6.0, 4.0]);
+var p2 = board.create('point', [3.0, 2.0]);
+var p3 = board.create('point', [1.0, 7.0]);
+
+var bi1 = board.create('bisector', [p1, p2, p3]);
+
+symbols/Bisectorlines.html
+var p1 = board.create('point', [6.0, 4.0]);
+var p2 = board.create('point', [3.0, 2.0]);
+var p3 = board.create('point', [1.0, 7.0]);
+var p4 = board.create('point', [3.0, 0.0]);
+var l1 = board.create('line', [p1, p2]);
+var l2 = board.create('line', [p3, p4]);
+
+var bi1 = board.create('bisectorlines', [l1, l2]);
+
+symbols/Bisector.html
+var p1 = board.create('point', [6.0, 4.0]);
+var p2 = board.create('point', [3.0, 2.0]);
+var p3 = board.create('point', [1.0, 7.0]);
+
+var bi1 = board.create('bisector', [p1, p2, p3]);
+
+symbols/Button.html
+list index out of range
+symbols/Cardinalspline.html
+list index out of range
+symbols/Chart.html
+list index out of range
+symbols/Checkbox.html
+list index out of range
+symbols/Circle.html
+// Create a circle providing two points
+var p1 = board.create('point', [2.0, 2.0]),
+    p2 = board.create('point', [2.0, 0.0]),
+    c1 = board.create('circle', [p1, p2]);
+
+// Create another circle using the above circle
+var p3 = board.create('point', [3.0, 2.0]),
+    c2 = board.create('circle', [p3, c1]);
+
+symbols/Circumcenter.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var cc1 = board.create('circumcenter', [p1, p2, p3]);
+
+symbols/Circumcircle.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var cc1 = board.create('circumcircle', [p1, p2, p3]);
+
+symbols/Circumcircle.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var cc1 = board.create('circumcircle', [p1, p2, p3]);
+
+symbols/CircumcircleArc.html
+// Create a circum circle arc out of three free points
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+var p3 = board.create('point', [3.5, 1.0]);
+
+var a = board.create('circumcirclearc', [p1, p2, p3]);
+
+symbols/Arc.html
+// Create an arc out of three free points
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+var p3 = board.create('point', [3.5, 1.0]);
+
+var a = board.create('arc', [p1, p2, p3]);
+board.create('text',[1,6,function(){return 'arclength: '+Math.round(a.Value()*100)/100}])
+
+symbols/CircumcircleSector.html
+// Create an arc out of three free points
+var p1 = board.create('point', [1.5, 5.0]),
+    p2 = board.create('point', [1.0, 0.5]),
+    p3 = board.create('point', [5.0, 3.0]),
+
+    a = board.create('circumcirclesector', [p1, p2, p3]);
+
+symbols/Sector.html
+// Create a sector out of three free points
+var p1 = board.create('point', [1.5, 5.0]),
+    p2 = board.create('point', [1.0, 0.5]),
+    p3 = board.create('point', [5.0, 3.0]),
+
+    a = board.create('sector', [p1, p2, p3]);
+
+symbols/Comb.html
+// Create a simple horizontal comb with invisible endpoints
+var c = board.create('comb', [[1, 0], [3, 0]]);
+
+
+symbols/Conic.html
+// Create a conic section through the points A, B, C, D, and E.
+ var A = board.create('point', [1,5]);
+ var B = board.create('point', [1,2]);
+ var C = board.create('point', [2,0]);
+ var D = board.create('point', [0,0]);
+ var E = board.create('point', [-1,5]);
+ var conic = board.create('conic',[A,B,C,D,E]);
+
+symbols/Curve.html
+// Parametric curve
+// Create a curve of the form (t-sin(t), 1-cos(t), i.e.
+// the cycloid curve.
+  var graph = board.create('curve',
+                       [function(t){ return t-Math.sin(t);},
+                        function(t){ return 1-Math.cos(t);},
+                        0, 2*Math.PI]
+                    );
+
+symbols/Curve.html
+// Parametric curve
+// Create a curve of the form (t-sin(t), 1-cos(t), i.e.
+// the cycloid curve.
+  var graph = board.create('curve',
+                       [function(t){ return t-Math.sin(t);},
+                        function(t){ return 1-Math.cos(t);},
+                        0, 2*Math.PI]
+                    );
+
+symbols/Derivative.html
+var cu = board.create('cardinalspline', [[[-3,0], [-1,2], [0,1], [2,0], [3,1]], 0.5, 'centripetal'], {createPoints: false});
+var d = board.create('derivative', [cu], {dash: 2});
+
+
+symbols/Ellipse.html
+// Create an Ellipse by three points
+var A = board.create('point', [-1,4]);
+var B = board.create('point', [-1,-4]);
+var C = board.create('point', [1,1]);
+var el = board.create('ellipse',[A,B,C]);
+
+symbols/Functiongraph.html
+// Create a function graph for f(x) = 0.5*x*x-2*x
+  var graph = board.create('functiongraph',
+                       [function(x){ return 0.5*x*x-2*x;}, -2, 4]
+                    );
+
+symbols/Curve.html
+// Parametric curve
+// Create a curve of the form (t-sin(t), 1-cos(t), i.e.
+// the cycloid curve.
+  var graph = board.create('curve',
+                       [function(t){ return t-Math.sin(t);},
+                        function(t){ return 1-Math.cos(t);},
+                        0, 2*Math.PI]
+                    );
+
+symbols/JXG.Curve.html#X
+list index out of range
+symbols/Glider.html
+// Create a glider with user defined coordinates. If the coordinates are not on
+// the circle (like in this case) the point will be projected onto the circle.
+var p1 = board.create('point', [2.0, 2.0]);
+var c1 = board.create('circle', [p1, 2.0]);
+var p2 = board.create('glider', [2.0, 1.5, c1]);
+
+symbols/Grid.html
+list index out of range
+symbols/Group.html
+
+ // Create some free points. e.g. A, B, C, D
+ // Create a group
+
+ var p, col, g;
+ col = 'blue';
+ p = [];
+ p.push(board.create('point',[-2, -1 ], {size: 5, strokeColor:col, fillColor:col}));
+ p.push(board.create('point',[2, -1 ], {size: 5, strokeColor:col, fillColor:col}));
+ p.push(board.create('point',[2, 1 ], {size: 5, strokeColor:col, fillColor:col}));
+ p.push(board.create('point',[-2, 1], {size: 5, strokeColor:col, fillColor:col}));
+ g = board.create('group', p);
+
+
+symbols/JXG.Point.html
+list index out of range
+symbols/Hatch.html
+// Create an axis providing two coords pairs.
+  var p1 = board.create('point', [0, 3]);
+  var p2 = board.create('point', [1, 3]);
+  var l1 = board.create('line', [p1, p2]);
+  var t = board.create('hatch', [l1, 3]);
+
+symbols/Hyperbola.html
+// Create an Hyperbola by three points
+var A = board.create('point', [-1,4]);
+var B = board.create('point', [-1,-4]);
+var C = board.create('point', [1,1]);
+var el = board.create('hyperbola',[A,B,C]);
+
+symbols/Image.html
+var im = board.create('image', ['http://jsxgraph.uni-bayreuth.de/jsxgraph/distrib/images/uccellino.jpg', [-3,-2], [3,3]]);
+
+
+symbols/Incenter.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var ic1 = board.create('incenter', [p1, p2, p3]);
+
+symbols/Incircle.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var ic1 = board.create('incircle', [p1, p2, p3]);
+
+symbols/Inequality.html
+var p = board.create('point', [1, 3]),
+    q = board.create('point', [-2, -4]),
+    l = board.create('line', [p, q]),
+    ineq = board.create('inequality', [l]);
+ineq = board.create('inequality', [l]);
+
+symbols/Input.html
+list index out of range
+symbols/Integral.html
+var c1 = board.create('functiongraph', [function (t) { return t*t*t; }]);
+var i1 = board.create('integral', [[-1.0, 4.0], c1]);
+
+symbols/Intersection.html
+// Create an intersection point of circle and line
+var p1 = board.create('point', [2.0, 2.0]);
+var c1 = board.create('circle', [p1, 2.0]);
+
+var p2 = board.create('point', [2.0, 2.0]);
+var p3 = board.create('point', [2.0, 2.0]);
+var l1 = board.create('line', [p2, p3]);
+
+var i = board.create('intersection', [c1, l1, 0]);
+
+symbols/Label.html
+list index out of range
+symbols/Legend.html
+var board = JXG.JSXGraph.initBoard('jxgbox', {axis:true,boundingbox:[-4,48.3,12.0,-2.3]});
+var x       = [-3,-2,-1,0,1,2,3,4,5,6,7,8];
+var dataArr = [4,7,7,27,33,37,46,22,11,4,1,0];
+
+colors = ['green', 'yellow', 'red', 'blue'];
+board.create('chart', [x,dataArr], {chartStyle:'bar', width:1.0, labels:dataArr, colors: colors} );
+board.create('legend', [8, 45], {labels:dataArr, colors: colors, strokeWidth:5} );
+
+
+symbols/Line.html
+// Create a line using point and coordinates/
+// The second point will be fixed and invisible.
+var p1 = board.create('point', [4.5, 2.0]);
+var l1 = board.create('line', [p1, [1.0, 1.0]]);
+
+symbols/Locus.html
+ // This examples needs JXG.Server up and running, otherwise it won't work.
+ p1 = board.create('point', [0, 0]);
+ p2 = board.create('point', [6, -1]);
+ c1 = board.create('circle', [p1, 2]);
+ c2 = board.create('circle', [p2, 1.5]);
+ g1 = board.create('glider', [6, 3, c1]);
+ c3 = board.create('circle', [g1, 4]);
+ g2 = board.create('intersection', [c2,c3,0]);
+ m1 = board.create('midpoint', [g1,g2]);
+ loc = board.create('locus', [m1], {strokeColor: 'red'});
+
+symbols/MajorArc.html
+// Create an arc out of three free points
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+var p3 = board.create('point', [3.5, 1.0]);
+
+var a = board.create('minorarc', [p1, p2, p3]);
+
+symbols/MajorSector.html
+// Create an arc out of three free points
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+var p3 = board.create('point', [3.5, 1.0]);
+
+var a = board.create('majorsector', [p1, p2, p3]);
+
+symbols/Metapostspline.html
+list index out of range
+symbols/Midpoint.html
+// Create base elements: 2 points and 1 line
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var l1 = board.create('segment', [[0.0, 3.0], [3.0, 3.0]]);
+
+var mp1 = board.create('midpoint', [p1, p2]);
+var mp2 = board.create('midpoint', [l1]);
+
+symbols/MinorArc.html
+// Create an arc out of three free points
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+var p3 = board.create('point', [3.5, 1.0]);
+
+var a = board.create('arc', [p1, p2, p3]);
+
+symbols/MinorSector.html
+// Create sector out of three free points
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+var p3 = board.create('point', [3.5, 1.0]);
+
+var a = board.create('minorsector', [p1, p2, p3]);
+
+symbols/Mirrorelement.html
+        // point of reflection
+        var mirr = board.create('point', [-1,-1], {color: '#aaaaaa'});
+
+        var p1 = board.create('point', [-3,-1], {name: "A"});
+        var q1 = board.create('mirrorelement', [p1, mirr], {name: "A'"});
+
+        var l1 = board.create('line', [1, -5, 1]);
+        var l2 = board.create('mirrorelement', [l1, mirr]);
+
+        var cu1 = board.create('curve', [[-3, -3, -2.5, -3, -3, -2.5], [-3, -2, -2, -2, -2.5, -2.5]], {strokeWidth:3});
+        var cu2 = board.create('mirrorelement', [cu1, mirr], {strokeColor: 'red', strokeWidth:3});
+
+        var pol1 = board.create('polygon', [[-6,-2], [-4,-4], [-5,-0.5]]);
+        var pol2 = board.create('mirrorelement', [pol1, mirr]);
+
+        var c1 = board.create('circle', [[-6,-6], [-6, -5]]);
+        var c2 = board.create('mirrorelement', [c1, mirr]);
+
+        var a1 = board.create('arc', [[1, 1], [0, 1], [1, 0]], {strokeColor: 'red'});
+        var a2 = board.create('mirrorelement', [a1, mirr], {strokeColor: 'red'});
+
+        var s1 = board.create('sector', [[-3.5,-3], [-3.5, -2], [-3.5,-4]], {
+                          anglePoint: {visible:true}, center: {visible: true}, radiusPoint: {visible: true},
+                          fillColor: 'yellow', strokeColor: 'black'});
+        var s2 = board.create('mirrorelement', [s1, mirr], {fillColor: 'yellow', strokeColor: 'black', fillOpacity: 0.5});
+
+        var an1 = board.create('angle', [[-4,3.9], [-3, 4], [-3, 3]]);
+        var an2 = board.create('mirrorelement', [an1, mirr]);
+
+
+
+symbols/Mirrorpoint.html
+var p1 = board.create('point', [3.0, 3.0]);
+var p2 = board.create('point', [6.0, 1.0]);
+
+var mp1 = board.create('mirrorpoint', [p1, p2]);
+
+symbols/NonReflexAngle.html
+// Create a non-reflex angle out of three free points
+var p1 = board.create('point', [5.0, 3.0]),
+    p2 = board.create('point', [1.0, 0.5]),
+    p3 = board.create('point', [1.5, 5.0]),
+
+    a = board.create('nonreflexangle', [p1, p2, p3], {radius: 2}),
+    t = board.create('text', [4, 4, function() { return JXG.toFixed(a.Value(), 2); }]);
+
+symbols/Normal.html
+// Create a normal to a circle.
+var p1 = board.create('point', [2.0, 2.0]);
+var p2 = board.create('point', [3.0, 2.0]);
+var c1 = board.create('circle', [p1, p2]);
+
+var norm1 = board.create('normal', [c1, p2]);
+
+symbols/Orthogonalprojection.html
+var p1 = board.create('point', [0.0, 4.0]);
+var p2 = board.create('point', [6.0, 1.0]);
+var l1 = board.create('line', [p1, p2]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var pp1 = board.create('orthogonalprojection', [p3, l1]);
+
+symbols/OtherIntersection.html
+// Create an intersection point of circle and line
+var p1 = board.create('point', [2.0, 2.0]);
+var c1 = board.create('circle', [p1, 2.0]);
+
+var p2 = board.create('point', [2.0, 2.0]);
+var p3 = board.create('point', [2.0, 2.0]);
+var l1 = board.create('line', [p2, p3]);
+
+var i = board.create('intersection', [c1, l1, 0]);
+var j = board.create('otherintersection', [c1, l1, i]);
+
+symbols/Parabola.html
+// Create a parabola by a point C and a line l.
+var A = board.create('point', [-1,4]);
+var B = board.create('point', [-1,-4]);
+var l = board.create('line', [A,B]);
+var C = board.create('point', [1,1]);
+var el = board.create('parabola',[C,l]);
+
+symbols/Parallel.html
+// Create a parallel
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var l1 = board.create('line', [p1, p2]);
+
+var p3 = board.create('point', [3.0, 3.0]);
+var pl1 = board.create('parallel', [l1, p3]);
+
+symbols/Parallelpoint.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var pp1 = board.create('parallelpoint', [p1, p2, p3]);
+
+symbols/Perpendicular.html
+list index out of range
+symbols/PerpendicularPoint.html
+var p1 = board.create('point', [0.0, 4.0]);
+var p2 = board.create('point', [6.0, 1.0]);
+var l1 = board.create('line', [p1, p2]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var pp1 = board.create('perpendicularpoint', [p3, l1]);
+
+symbols/PerpendicularSegment.html
+list index out of range
+symbols/Point.html
+// Create a free point using affine Euclidean coordinates
+var p1 = board.create('point', [3.5, 2.0]);
+
+symbols/PolarLine.html
+// Create the polar line of a point with respect to a conic
+var p1 = board.create('point', [-1, 2]);
+var p2 = board.create('point', [ 1, 4]);
+var p3 = board.create('point', [-1,-2]);
+var p4 = board.create('point', [ 0, 0]);
+var p5 = board.create('point', [ 4,-2]);
+var c1 = board.create('conic',[p1,p2,p3,p4,p5]);
+var p6 = board.create('point', [-1, 1]);
+var l1 = board.create('polarline', [c1, p6]);
+
+symbols/PolePoint.html
+// Create the pole point of a line with respect to a conic
+var p1 = board.create('point', [-1, 2]);
+var p2 = board.create('point', [ 1, 4]);
+var p3 = board.create('point', [-1,-2]);
+var p4 = board.create('point', [ 0, 0]);
+var p5 = board.create('point', [ 4,-2]);
+var c1 = board.create('conic',[p1,p2,p3,p4,p5]);
+var p6 = board.create('point', [-1, 4]);
+var p7 = board.create('point', [2, -2]);
+var l1 = board.create('line', [p6, p7]);
+var p8 = board.create('polepoint', [c1, l1]);
+
+symbols/Polygon.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+var p3 = board.create('point', [4.0, 6.0]);
+var p4 = board.create('point', [1.0, 4.0]);
+
+var pol = board.create('polygon', [p1, p2, p3, p4]);
+
+symbols/PolygonalChain.html
+    var attr = {
+            snapToGrid: true
+        },
+        p = [];
+
+	p.push(board.create('point', [-4, 0], attr));
+	p.push(board.create('point', [-1, -3], attr));
+	p.push(board.create('point', [0, 2], attr));
+	p.push(board.create('point', [2, 1], attr));
+	p.push(board.create('point', [4, -2], attr));
+
+ var chain = board.create('polygonalchain', p, {borders: {strokeWidth: 3}});
+
+
+symbols/RadicalAxis.html
+// Create the radical axis line with respect to two circles
+  var board = JXG.JSXGraph.initBoard('7b7233a0-f363-47dd-9df5-5018d0d17a98', {boundingbox: [-1, 9, 9, -1], axis: true, showcopyright: false, shownavigation: false});
+  var p1 = board.create('point', [2, 3]);
+  var p2 = board.create('point', [1, 4]);
+  var c1 = board.create('circle', [p1, p2]);
+  var p3 = board.create('point', [6, 5]);
+  var p4 = board.create('point', [8, 6]);
+  var c2 = board.create('circle', [p3, p4]);
+  var r1 = board.create('radicalaxis', [c1, c2]);
+
+symbols/Reflection.html
+var p1 = board.create('point', [0.0, 4.0]);
+var p2 = board.create('point', [6.0, 1.0]);
+var l1 = board.create('line', [p1, p2]);
+var p3 = board.create('point', [3.0, 3.0]);
+
+var rp1 = board.create('reflection', [p3, l1]);
+
+symbols/ReflexAngle.html
+// Create a non-reflex angle out of three free points
+var p1 = board.create('point', [5.0, 3.0]),
+    p2 = board.create('point', [1.0, 0.5]),
+    p3 = board.create('point', [1.5, 5.0]),
+
+    a = board.create('reflexangle', [p1, p2, p3], {radius: 2}),
+    t = board.create('text', [4, 4, function() { return JXG.toFixed(a.Value(), 2); }]);
+
+symbols/RegularPolygon.html
+var p1 = board.create('point', [0.0, 2.0]);
+var p2 = board.create('point', [2.0, 1.0]);
+
+var pol = board.create('regularpolygon', [p1, p2, 5]);
+
+symbols/Riemannsum.html
+// Create Riemann sums for f(x) = 0.5*x*x-2*x.
+  var s = board.create('slider',[[0,4],[3,4],[0,4,10]],{snapWidth:1});
+  var f = function(x) { return 0.5*x*x-2*x; };
+  var r = board.create('riemannsum',
+              [f, function(){return s.Value();}, 'upper', -2, 5],
+              {fillOpacity:0.4}
+              );
+  var g = board.create('functiongraph',[f, -2, 5]);
+  var t = board.create('text',[-2,-2, function(){ return 'Sum=' + JXG.toFixed(r.Value(), 4); }]);
+
+symbols/Sector.html
+// Create a sector out of three free points
+var p1 = board.create('point', [1.5, 5.0]),
+    p2 = board.create('point', [1.0, 0.5]),
+    p3 = board.create('point', [5.0, 3.0]),
+
+    a = board.create('sector', [p1, p2, p3]);
+
+symbols/Segment.html
+list index out of range
+symbols/Semicircle.html
+// Create an arc out of three free points
+var p1 = board.create('point', [4.5, 2.0]);
+var p2 = board.create('point', [1.0, 0.5]);
+
+var a = board.create('semicircle', [p1, p2]);
+
+symbols/Slider.html
+// Create a slider with values between 1 and 10, initial position is 5.
+var s = board.create('slider', [[1, 2], [3, 2], [1, 5, 10]]);
+
+symbols/Slopetriangle.html
+// Create a slopetriangle on a tangent
+var f = board.create('plot', ['sin(x)']),
+    g = board.create('glider', [1, 2, f]),
+    t = board.create('tangent', [g]),
+
+    st = board.create('slopetriangle', [t]);
+
+
+symbols/Spline.html
+list index out of range
+symbols/Stepfunction.html
+// Create step function.
+     var curve = board.create('stepfunction', [[0,1,2,3,4,5], [1,3,0,2,2,1]]);
+
+symbols/Tangent.html
+// Create a tangent providing a glider on a function graph
+  var c1 = board.create('curve', [function(t){return t},function(t){return t*t*t;}]);
+  var g1 = board.create('glider', [0.6, 1.2, c1]);
+  var t1 = board.create('tangent', [g1]);
+
+symbols/Tapemeasure.html
+// Create atape measure
+var p1 = board.create('point', [0,0]);
+var p2 = board.create('point', [1,1]);
+var p3 = board.create('point', [3,1]);
+var tape = board.create('tapemeasure', [[1, 2], [4, 2]], {name:'dist'});
+
+symbols/Text.html
+// Create a fixed text at position [0,1].
+  var t1 = board.create('text',[0,1,"Hello World"]);
+
+symbols/Ticks.html
+// Create an axis providing two coordinate pairs.
+  var p1 = board.create('point', [0, 3]);
+  var p2 = board.create('point', [1, 3]);
+  var l1 = board.create('line', [p1, p2]);
+  var t = board.create('ticks', [l1], {ticksDistance: 2});
+
+symbols/Tracecurve.html
+// Create trace curve.
+var c1 = board.create('circle',[[0, 0], [2, 0]]),
+p1 = board.create('point',[-3, 1]),
+g1 = board.create('glider',[2, 1, c1]),
+s1 = board.create('segment',[g1, p1]),
+p2 = board.create('midpoint',[s1]),
+curve = board.create('tracecurve', [g1, p2]);
+
+
+symbols/Transformation.html
+list index out of range
+symbols/Turtle.html
+list index out of range
+symbols/_global_.html
+list index out of range
+symbols/JXG.html
+list index out of range
+symbols/JXG.AbstractRenderer.html
+list index out of range
+symbols/JXG.Board.html
+list index out of range
+symbols/JXG.C.html
+list index out of range
+symbols/JXG.CA.html
+list index out of range
+symbols/JXG.CanvasRenderer.html
+list index out of range
+symbols/JXG.Chart.html
+list index out of range
+symbols/JXG.Circle.html
+list index out of range
+symbols/JXG.Complex.html
+list index out of range
+symbols/JXG.Composition.html
+list index out of range
+symbols/JXG.Coords.html
+list index out of range
+symbols/JXG.CoordsElement.html
+list index out of range
+symbols/JXG.Curve.html
+list index out of range
+symbols/JXG.Dump.html
+list index out of range
+symbols/JXG.EventEmitter.html
+list index out of range
+symbols/JXG.GeometryElement.html
+list index out of range
+symbols/JXG.GeonextParser.html
+list index out of range
+symbols/JXG.Group.html
+list index out of range
+symbols/JXG.Image.html
+list index out of range
+symbols/JXG.JessieCode.html
+list index out of range
+symbols/JXG.JSXGraph.html
+list index out of range
+symbols/JXG.Legend.html
+list index out of range
+symbols/JXG.Line.html
+list index out of range
+symbols/JXG.Math.html
+list index out of range
+symbols/JXG.Math.Clip.html
+list index out of range
+symbols/JXG.Math.Extrapolate.html
+list index out of range
+symbols/JXG.Math.Geometry.html
+list index out of range
+symbols/JXG.Math.Interval.html
+list index out of range
+symbols/JXG.Math.Metapost.html
+list index out of range
+symbols/JXG.Math.Numerics.html
+list index out of range
+symbols/JXG.Math.Plot.html
+list index out of range
+symbols/JXG.Math.Poly.html
+list index out of range
+symbols/JXG.Math.Poly.Monomial.html
+list index out of range
+symbols/JXG.Math.Poly.Polynomial.html
+list index out of range
+symbols/JXG.Math.Poly.Ring.html
+list index out of range
+symbols/JXG.Math.Statistics.html
+list index out of range
+symbols/JXG.Math.Symbolic.html
+list index out of range
+symbols/JXG.NoRenderer.html
+list index out of range
+symbols/JXG.Options.html
+list index out of range
+symbols/JXG.Point.html
+list index out of range
+symbols/JXG.Polygon.html
+list index out of range
+symbols/JXG.Server.html
+list index out of range
+symbols/JXG.Server.modules.html
+list index out of range
+symbols/JXG.SVGRenderer.html
+list index out of range
+symbols/JXG.Text.html
+list index out of range
