@@ -79,5 +79,3 @@ let preTemplates = [
 export let templates = Array.from(
   preTemplates.map((e) => [e.split("(")[1].split(",")[0].slice(1, -1), e])
 );
-export let textareaContent =
-  "let board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true, keepaspectratio:true});\n";

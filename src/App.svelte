@@ -3,9 +3,18 @@
   import Demo from "./components/Demo.svelte";
   import CurrentCommand from "./components/CurrentCommand.svelte";
   import SaveToFile from "./components/SaveToFile.svelte";
-  import { _itemList, textareaContent } from "./constants/preDefine.js";
+  import { _itemList } from "./constants/preDefine.js";
   let itemList = _itemList;
-  let currentContent = textareaContent; // current content is in textarea
+  let hint = "";
+  let currentContent = ""; // current content is in textarea
+  $: setTimeout(() => {
+    try {
+      eval(currentContent);
+      hint = "All correct.";
+    } catch (error) {
+      hint = "Code has some error.";
+    }
+  }, 400);
 </script>
 
 <svelte:head>
@@ -42,9 +51,7 @@
         name="jscode"
         bind:value={currentContent}
       />
-      <button class="btn btn-primary" on:click={() => eval(currentContent)}
-        >click to render</button
-      >
+      {hint}
     </div>
     <div class="col-md-7">
       <div id="jxgbox" class="jxgbox" style="width:800px; height:600px;" />
