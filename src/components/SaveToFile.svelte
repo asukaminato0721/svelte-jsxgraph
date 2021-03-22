@@ -18,16 +18,16 @@
   }
   function saveAsZip() {
     // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data#aside_on_promises
-    jsContent = jsContent // check if loaded
-      ? jsContent
-      : fetch(
-          "https://cdn.jsdelivr.net/npm/jsxgraph@1.1.0/distrib/jsxgraphcore.js"
-        ).then((response) => response.text());
-    cssContent = cssContent // check if loaded
-      ? cssContent
-      : fetch(
-          "https://cdn.jsdelivr.net/npm/jsxgraph@1.1.0/distrib/jsxgraph.css"
-        ).then((response) => response.text());
+    jsContent =
+      jsContent ?? // check if loaded
+      fetch(
+        "https://cdn.jsdelivr.net/npm/jsxgraph@1.1.0/distrib/jsxgraphcore.js"
+      ).then((response) => response.text());
+    cssContent =
+      cssContent ?? // check if loaded
+      fetch(
+        "https://cdn.jsdelivr.net/npm/jsxgraph@1.1.0/distrib/jsxgraph.css"
+      ).then((response) => response.text());
     let zip = new JSZip();
     zip
       .file(currentFileName + ".html", makeJsToHtml(currentContent))
