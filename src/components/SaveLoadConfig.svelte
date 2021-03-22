@@ -24,6 +24,6 @@
   }
 </script>
 
-<button on:click={() => saveConfig()}> save config </button>
-<button on:click={() => loadConfig()}> load config </button>
-<button on:click={() => clearConfig()}> clear config </button>
+<button on:click={saveConfig}> save config </button>
+<button on:click={loadConfig}> load config </button>
+<button on:click={clearConfig}> clear config </button>
