@@ -4,12 +4,16 @@
   import CurrentCommand from "./components/CurrentCommand.svelte";
   import SaveToFile from "./components/SaveToFile.svelte";
   import { _itemList } from "./constants/preDefine.js";
+  import { writable } from "svelte/store";
   let itemList = _itemList;
   let hint = "";
-  let currentContent = ""; // current content is in textarea
+  const currentContent = writable(localStorage.getItem("currentContent") ?? "");
+  currentContent.subscribe((val) =>
+    localStorage.setItem("currentContent", val)
+  );
   $: setTimeout(() => {
     try {
-      eval(currentContent);
+      window.eval($currentContent);
       hint = "All correct.";
     } catch (error) {
       hint = "Code has some error.";
@@ -36,8 +40,7 @@
 <a class="btn btn-primary" href="https://github.com/wuyudi/svelte-jsxgraph">
   github repository</a
 >
-<Demo bind:currentContent /><br />
-
+<Demo bind:currentContent={$currentContent} /><br />
 <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
 
 <div class="container-fluid">
@@ -49,7 +52,7 @@
         style="height: 200px"
         id="jscode"
         name="jscode"
-        bind:value={currentContent}
+        bind:value={$currentContent}
       />
       {hint}
     </div>
@@ -60,7 +63,7 @@
   <div class="row">
     <div class="col-md-12">
       <AddCommand bind:itemList />
-      <SaveToFile {currentContent} />
+      <SaveToFile currentContent={$currentContent} />
     </div>
   </div>
 </div>
