@@ -1,5 +1,8 @@
-<script>
-  export let itemList;
+<script lang="ts">
+  interface item {
+    cmd: string;
+  }
+  export let itemList: item[];
   /**
    *
    */

@@ -1,4 +1,4 @@
-function makeJsToHtml(text) {
+function makeJsToHtml(text: string): string {
   return (
     `<!DOCTYPE html>
 <html lang="en">

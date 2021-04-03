@@ -3,9 +3,9 @@
   import Demo from "./components/Demo.svelte";
   import CurrentCommand from "./components/CurrentCommand.svelte";
   import SaveToFile from "./components/SaveToFile.svelte";
-  import { _itemList } from "./constants/preDefine.js";
   import { writable } from "svelte/store";
-  let itemList = _itemList;
+  import constants from "./constants/constants.json";
+  let itemList = constants.itemList;
   let hint = "";
   const currentContent = writable(localStorage.getItem("currentContent") ?? "");
   currentContent.subscribe((val) =>

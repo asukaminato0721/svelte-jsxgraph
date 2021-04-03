@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import makeJsToHtml from "../functions/makeJsToHtml.js";
   import { saveAs } from "file-saver"; // https://github.com/eligrey/FileSaver.js#import-saveas-from-file-saver
   import JSZip from "jszip"; // https://stuk.github.io/jszip/documentation/examples.html

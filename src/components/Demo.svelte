@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import InfinitySquare from "../examples/InfinitySquare.js";
   import Moonwalk from "../examples/Moonwalk.js";
   let textareaContent =
-    "let board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-20, 10, 20, -10], axis:true});\n";
+    "let board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-13, 10, 10, -10], axis:true, keepAspectRatio:true});\n";
   export let currentContent = textareaContent;
 </script>
 

@@ -1,7 +1,12 @@
-<script>
-  import { _itemList, templates } from "../constants/preDefine.js";
+<script lang="ts">
+  import constants from "../constants/constants.json";
   let addCommand = "";
-  export let itemList = _itemList;
+  export let itemList = constants.itemList;
+  let templates = constants.Templates.map((e) => [
+    // generate needed format
+    e.split("(")[1].split(",")[0].slice(1, -1),
+    e,
+  ]);
 </script>
 
 <div class="input-group">
