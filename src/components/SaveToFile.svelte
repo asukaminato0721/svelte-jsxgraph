@@ -3,9 +3,9 @@
   import { saveAs } from "file-saver"; // https://github.com/eligrey/FileSaver.js#import-saveas-from-file-saver
   import JSZip from "jszip"; // https://stuk.github.io/jszip/documentation/examples.html
   //https://stackoverflow.com/questions/19059580/client-on-node-js-uncaught-referenceerror-require-is-not-defined
-  export let currentContent;
+  export let currentContent: string;
   let _currentFileName = "";
-  let jsContent, cssContent;
+  let jsContent: Promise<string>, cssContent: Promise<string>;
   $: currentFileName = _currentFileName || "file";
   // https://stackoverflow.com/questions/148441/how-can-i-get-the-content-of-the-file-specified-as-the-src-of-a-script-tag
   // https://stuk.github.io/jszip/
