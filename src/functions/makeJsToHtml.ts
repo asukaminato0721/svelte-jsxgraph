@@ -31,9 +31,11 @@ function makeJsToHtml(text: string): string {
   <body>
     <div id="jxgbox" class="jxgbox" style="width: 500px; height: 500px"></div>
   </body>
-  <script type="text/javascript">` +
+  <script type="text/javascript">
+  // START` +
     text +
-    `</script>
+    `// END
+    </script>
 </html>`
   );
 }

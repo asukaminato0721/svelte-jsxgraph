@@ -3,6 +3,7 @@
   import Demo from "./components/Demo.svelte";
   import CurrentCommand from "./components/CurrentCommand.svelte";
   import SaveToFile from "./components/SaveToFile.svelte";
+  import ReadInFile from "./components/ReadInFile.svelte";
   import { writable } from "svelte/store";
   import constants from "./constants/constants.json";
   let itemList = constants.itemList;
@@ -40,7 +41,9 @@
 <a class="btn btn-primary" href="https://github.com/wuyudi/svelte-jsxgraph">
   github repository</a
 >
-<Demo bind:currentContent={$currentContent} /><br />
+<Demo bind:currentContent={$currentContent} />
+<ReadInFile bind:currentContent={$currentContent} />
+<br />
 <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
 
 <div class="container-fluid">
@@ -49,7 +52,7 @@
       <CurrentCommand {itemList} />
       <textarea
         class="form-control"
-        style="height: 200px"
+        style="height: 400px"
         id="jscode"
         name="jscode"
         bind:value={$currentContent}

@@ -1,8 +1,5 @@
 <script lang="ts">
-  interface item {
-    cmd: string;
-  }
-  export let itemList: item[];
+  export let itemList: { cmd: string }[];
   import SaveLoadConfig from "./SaveLoadConfig.svelte";
   import insertTextAtCursor from "insert-text-at-cursor";
 </script>

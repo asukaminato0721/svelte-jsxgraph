@@ -1,22 +1,26 @@
 <script lang="ts">
   import constants from "../constants/constants.json";
-  let addCommand = "";
+  import Select from "svelte-select";
+  let addCommand: { index: number; value: string };
+  import insertTextAtCursor from "insert-text-at-cursor";
   export let itemList = constants.itemList;
   let templates = constants.Templates.map((e) => [
     // generate needed format
     e.split("(")[1].split(",")[0].slice(1, -1),
     e,
   ]);
+  let select_item = constants.Templates;
 </script>
 
-<div class="input-group">
-  <input
-    type="text"
-    class="form-control"
-    placeholder="type command or choose from right"
-    bind:value={addCommand}
-  />
-  <select bind:value={addCommand}>
+<div class="row">
+  <div class="col-md-8">
+    <Select
+      bind:selectedValue={addCommand}
+      items={select_item}
+      placeholder="type in command"
+    />
+  </div>
+  <select bind:value={addCommand} class="col-md-2">
     {#each templates as template}
       <option value={template[1]}>
         {template[0]}
@@ -24,10 +28,18 @@
     {/each}
   </select>
   <button
-    class="btn btn-outline-secondary"
+    class="btn btn-outline-secondary col-md-1"
     on:click={() => {
-      itemList = [...itemList, { cmd: addCommand }];
-      addCommand = "";
-    }}>click to add</button
+      itemList = [...itemList, { cmd: addCommand.value }];
+    }}>add</button
+  >
+  <button
+    class="btn btn-outline-secondary col-md-1"
+    on:click={() => {
+      insertTextAtCursor(
+        document.getElementById("jscode"),
+        addCommand.value + "\n"
+      );
+    }}>insert</button
   >
 </div>
