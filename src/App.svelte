@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import AddCommand from "./components/AddCommand.svelte";
   import Demo from "./components/Demo.svelte";
   import CurrentCommand from "./components/CurrentCommand.svelte";

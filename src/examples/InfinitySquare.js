@@ -1,6 +1,6 @@
 // https://jsxgraph.uni-bayreuth.de/showcase/infinity.html
 
-var InfinitySquare = `var board = JXG.JSXGraph.initBoard("jxgbox", {
+let InfinitySquare = `var board = JXG.JSXGraph.initBoard("jxgbox", {
     boundingbox: [-9, 8, 9, -10],
     keepaspectreatio: true,
     axis: false,
