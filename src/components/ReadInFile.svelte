@@ -19,4 +19,4 @@
   }
 </script>
 
-load file <input type="file" bind:files accept=".html" />
+<big>load file </big><input type="file" bind:files accept=".html" />
