@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let itemList: { cmd: string }[];
+  export let itemList: { cmd: string; id: number }[];
   /**
    *
    */
@@ -24,6 +24,7 @@
   }
 </script>
 
-<button on:click={saveConfig}> save config </button>
-<button on:click={loadConfig}> load config </button>
-<button on:click={clearConfig}> clear config </button>
+<c>config:</c>
+<button class="btn btn-primary" on:click={saveConfig}>save</button>
+<button class="btn btn-primary" on:click={loadConfig}>load</button>
+<button class="btn btn-primary" on:click={clearConfig}>clear</button>

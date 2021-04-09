@@ -1,5 +1,7 @@
 {
-  "itemList": [{ "cmd": "let point = board.create('point', [1.0, 1.0]);" }],
+  "itemList": [
+    { "cmd": "let point = board.create('point', [1.0, 1.0]);", "id": 0 }
+  ],
   "Templates_comment": "copy templates from here https://jsxgraph.uni-bayreuth.de/docs/symbols/Angle.html",
   "Templates": [
     "let angle = board.create('angle', [p1, p2, p3]);",

@@ -9,7 +9,7 @@
   class="btn btn-primary"
   on:click={() => {
     currentContent = InfinitySquare;
-  }}>InfinitySquare</button
+  }}>Demo</button
 >
 <button
   class="btn btn-primary"

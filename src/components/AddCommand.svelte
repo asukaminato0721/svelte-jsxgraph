@@ -30,7 +30,10 @@
   <button
     class="btn btn-outline-secondary col-md-1"
     on:click={() => {
-      itemList = [...itemList, { cmd: addCommand.value }];
+      itemList = [...itemList, { cmd: addCommand.value, id: -1 }];
+      itemList.forEach((ele, index) => {
+        ele.id = index;
+      });
     }}>add</button
   >
   <button

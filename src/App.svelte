@@ -5,6 +5,7 @@
   import SaveToFile from "./components/SaveToFile.svelte";
   import ReadInFile from "./components/ReadInFile.svelte";
   import NightMode from "./components/NightMode.svelte";
+  import SaveLoadConfig from "./components/SaveLoadConfig.svelte";
   import { writable } from "svelte/store";
   import constants from "./constants/constants.json";
   let itemList = constants.itemList;
@@ -45,13 +46,14 @@
 <Demo bind:currentContent={$currentContent} />
 <ReadInFile bind:currentContent={$currentContent} />
 <NightMode />
+<SaveLoadConfig bind:itemList />
 <br />
 <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-5">
-      <CurrentCommand {itemList} />
+      <CurrentCommand bind:itemList />
       <textarea
         class="form-control"
         style="height: 400px"

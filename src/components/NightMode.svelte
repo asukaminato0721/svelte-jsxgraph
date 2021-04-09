@@ -2,6 +2,8 @@
   let isNight = false;
 </script>
 
+<c>Day/Night Mod</c>
+<!-- c means nothing , just for tag to convert color -->
 <button
   class="btn btn-primary"
   on:click={() => {
