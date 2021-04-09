@@ -6,22 +6,10 @@
   import ReadInFile from "./components/ReadInFile.svelte";
   import NightMode from "./components/NightMode.svelte";
   import SaveLoadConfig from "./components/SaveLoadConfig.svelte";
-  import { writable } from "svelte/store";
+  import { currentContent } from "./components/current_content.js";
+  import CurrentContent from "./components/CurrentContent.svelte";
   import constants from "./constants/constants.json";
   let itemList = constants.itemList;
-  let hint = "";
-  const currentContent = writable(localStorage.getItem("currentContent") ?? "");
-  currentContent.subscribe((val) =>
-    localStorage.setItem("currentContent", val)
-  );
-  $: setTimeout(() => {
-    try {
-      window.eval($currentContent);
-      hint = "All correct.";
-    } catch (error) {
-      hint = "Code has some error.";
-    }
-  }, 400);
 </script>
 
 <svelte:head>
@@ -38,30 +26,23 @@
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
 </svelte:head>
-
-<!-- https://support.microsoft.com/en-us/topic/how-to-remove-underlines-from-hyperlinks-that-use-frontpage-2003-4702ea91-395a-38d7-9cf7-04672ada2bbc -->
-<a class="btn btn-primary" href="https://github.com/wuyudi/svelte-jsxgraph">
-  github repository</a
->
-<Demo bind:currentContent={$currentContent} />
-<ReadInFile bind:currentContent={$currentContent} />
-<NightMode />
-<SaveLoadConfig bind:itemList />
-<br />
-<!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
-
 <div class="container-fluid">
+  <div>
+    <!-- https://support.microsoft.com/en-us/topic/how-to-remove-underlines-from-hyperlinks-that-use-frontpage-2003-4702ea91-395a-38d7-9cf7-04672ada2bbc -->
+    <a class="btn btn-primary" href="https://github.com/wuyudi/svelte-jsxgraph">
+      github repository</a
+    >
+    <Demo bind:currentContent={$currentContent} />
+    <ReadInFile bind:currentContent={$currentContent} />
+    <NightMode />
+    <SaveLoadConfig bind:itemList />
+  </div>
+  <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
+
   <div class="row">
     <div class="col-md-5">
       <CurrentCommand bind:itemList />
-      <textarea
-        class="form-control"
-        style="height: 400px"
-        id="jscode"
-        name="jscode"
-        bind:value={$currentContent}
-      />
-      {hint}
+      <CurrentContent bind:currentContent={$currentContent} />
     </div>
     <div class="col-md-7">
       <div id="jxgbox" class="jxgbox" style="width:800px; height:600px;" />
