@@ -12,15 +12,13 @@
   let select_item = constants.Templates;
 </script>
 
-<div class="row">
-  <div class="col-md-8">
-    <Select
-      bind:selectedValue={addCommand}
-      items={select_item}
-      placeholder="type in command"
-    />
-  </div>
-  <select bind:value={addCommand} class="col-md-2">
+<div>
+  <Select
+    bind:selectedValue={addCommand}
+    items={select_item}
+    placeholder="type in command"
+  />
+  <select bind:value={addCommand}>
     {#each templates as template}
       <option value={template[1]}>
         {template[0]}
@@ -28,7 +26,6 @@
     {/each}
   </select>
   <button
-    class="btn btn-outline-secondary col-md-1"
     on:click={() => {
       itemList = [...itemList, { cmd: addCommand.value, id: -1 }];
       itemList.forEach((ele, index) => {
@@ -37,7 +34,6 @@
     }}>add</button
   >
   <button
-    class="btn btn-outline-secondary col-md-1"
     on:click={() => {
       insertTextAtCursor(
         document.getElementById("jscode"),
@@ -46,3 +42,10 @@
     }}>insert</button
   >
 </div>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: auto 10% 10% 10%;
+  }
+</style>

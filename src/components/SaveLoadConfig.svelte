@@ -25,6 +25,6 @@
 </script>
 
 <c>config:</c>
-<button class="btn btn-primary" on:click={saveConfig}>save</button>
-<button class="btn btn-primary" on:click={loadConfig}>load</button>
-<button class="btn btn-primary" on:click={clearConfig}>clear</button>
+<button on:click={saveConfig}>save</button>
+<button on:click={loadConfig}>load</button>
+<button on:click={clearConfig}>clear</button>

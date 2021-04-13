@@ -38,18 +38,21 @@
   }
 </script>
 
-<div class="input-group mb-3">
+<div>
   <input
     type="text"
     bind:value={_currentFileName}
-    class="form-control"
     placeholder="input file name, default is 'file.html'"
-    size="50"
   />
-  <button class="btn btn-outline-secondary" on:click={saveAsHtml}
-    >download as {currentFileName}.html</button
-  >
-  <button class="btn btn-outline-secondary" on:click={saveAsZip}
+  <button on:click={saveAsHtml}>download as {currentFileName}.html</button>
+  <button on:click={saveAsZip}
     >download as {currentFileName}.zip(for offline use)</button
   >
 </div>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: auto 20% 20%;
+  }
+</style>

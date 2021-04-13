@@ -6,13 +6,11 @@
 </script>
 
 <button
-  class="btn btn-primary"
   on:click={() => {
     currentContent = InfinitySquare;
   }}>Demo</button
 >
 <button
-  class="btn btn-primary"
   on:click={() => {
     currentContent = textareaContent;
   }}>init</button

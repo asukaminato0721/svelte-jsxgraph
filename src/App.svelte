@@ -10,48 +10,71 @@
   import CurrentContent from "./components/CurrentContent.svelte";
   import constants from "./constants/constants.json";
   let itemList = constants.itemList;
+  let isNight = false;
 </script>
 
-<svelte:head>
-  <!-- CSS only -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-    crossorigin="anonymous"
-  />
-  <!-- JavaScript Bundle with Popper -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
-</svelte:head>
-<div class="container-fluid">
-  <div>
+<div class="container">
+  <div class="menu">
     <!-- https://support.microsoft.com/en-us/topic/how-to-remove-underlines-from-hyperlinks-that-use-frontpage-2003-4702ea91-395a-38d7-9cf7-04672ada2bbc -->
-    <a class="btn btn-primary" href="https://github.com/wuyudi/svelte-jsxgraph">
+    <a target="_blank" href="https://github.com/wuyudi/svelte-jsxgraph">
       github repository</a
     >
-    <Demo bind:currentContent={$currentContent} />
-    <ReadInFile bind:currentContent={$currentContent} />
-    <NightMode />
-    <SaveLoadConfig bind:itemList />
+    <div>
+      <Demo bind:currentContent={$currentContent} />
+    </div>
+    <div>
+      <ReadInFile bind:currentContent={$currentContent} />
+    </div>
+    <div>
+      <NightMode bind:isNight />
+    </div>
+    <div>
+      <SaveLoadConfig bind:itemList />
+    </div>
   </div>
   <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
 
-  <div class="row">
-    <div class="col-md-5">
+  <div class="plot">
+    <div class="current">
       <CurrentCommand bind:itemList />
       <CurrentContent bind:currentContent={$currentContent} />
     </div>
-    <div class="col-md-7">
-      <div id="jxgbox" class="jxgbox" style="width:800px; height:600px;" />
+    <div class="img">
+      <div id="jxgbox" class="jxgbox" style="height: 600px;width=400px;" />
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <AddCommand bind:itemList />
-      <SaveToFile currentContent={$currentContent} />
-    </div>
+  <div class="AddCommand">
+    <AddCommand bind:itemList />
+  </div>
+  <div class="SaveToFile">
+    <SaveToFile currentContent={$currentContent} />
   </div>
 </div>
+{#if isNight}
+  <style>
+    :not(.img > *):not(foreignObject):not(.jxgbox) {
+      color: #999;
+      background-color: black;
+    }
+  </style>
+{/if}
+
+<style>
+  .container {
+    display: grid;
+    grid-template-rows: 5% auto 7% 5%;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .plot {
+    display: grid;
+    grid-template-columns: 40% auto;
+  }
+  .current {
+    display: grid;
+    grid-template-rows: max-content;
+    max-height: 600px;
+  }
+</style>

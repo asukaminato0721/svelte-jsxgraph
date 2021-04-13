@@ -11,11 +11,12 @@
   }, 400);
 </script>
 
-<textarea
-  class="form-control"
-  style="height: 400px"
-  id="jscode"
-  name="jscode"
-  bind:value={currentContent}
-/>
+<textarea id="jscode" name="jscode" bind:value={currentContent} />
 {hint}
+
+<style>
+  textarea {
+    height: 400px;
+    padding: 1ex;
+  }
+</style>
