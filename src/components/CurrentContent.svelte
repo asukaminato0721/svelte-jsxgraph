@@ -16,7 +16,8 @@
 
 <style>
   textarea {
-    height: 400px;
+    height: 360px;
     padding: 1ex;
+    margin: 0%;
   }
 </style>
