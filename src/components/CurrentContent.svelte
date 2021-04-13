@@ -16,8 +16,8 @@
 
 <style>
   textarea {
-    height: 360px;
-    padding: 1ex;
+    height: 340px;
     margin: 0%;
+    overflow-y: scroll;
   }
 </style>

@@ -40,7 +40,7 @@
       <CurrentContent bind:currentContent={$currentContent} />
     </div>
     <div class="img">
-      <div id="jxgbox" class="jxgbox" style="height: 600px;width=400px;" />
+      <div id="jxgbox" class="jxgbox" style="height: 560px;width=400px;" />
     </div>
   </div>
   <div class="AddCommand">

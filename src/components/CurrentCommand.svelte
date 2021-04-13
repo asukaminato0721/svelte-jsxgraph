@@ -28,7 +28,7 @@
     grid-template-columns: auto 15% 15%;
   }
   .container {
-    overflow: auto;
+    overflow-y: scroll;
     height: 200px;
   }
 </style>
