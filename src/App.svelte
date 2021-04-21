@@ -9,10 +9,12 @@
   import { currentContent } from "./components/current_content.js";
   import CurrentContent from "./components/CurrentContent.svelte";
   import constants from "./constants/constants.json";
+  import ReadFromUrl from "./components/ReadFromUrl.svelte";
   let itemList = constants.itemList;
   let isNight = false;
 </script>
 
+<ReadFromUrl bind:currentContent={$currentContent} />
 <div class="container">
   <div class="menu">
     <!-- https://support.microsoft.com/en-us/topic/how-to-remove-underlines-from-hyperlinks-that-use-frontpage-2003-4702ea91-395a-38d7-9cf7-04672ada2bbc -->
