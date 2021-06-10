@@ -1,57 +1,71 @@
 <script lang="ts">
-  import AddCommand from "./components/AddCommand.svelte";
   import Demo from "./components/Demo.svelte";
-  import CurrentCommand from "./components/CurrentCommand.svelte";
   import SaveToFile from "./components/SaveToFile.svelte";
   import ReadInFile from "./components/ReadInFile.svelte";
   import NightMode from "./components/NightMode.svelte";
-  import SaveLoadConfig from "./components/SaveLoadConfig.svelte";
   import { currentContent } from "./components/current_content.js";
   import CurrentContent from "./components/CurrentContent.svelte";
-  import constants from "./constants/constants.json";
   import ReadFromUrl from "./components/ReadFromUrl.svelte";
-  let itemList = constants.itemList;
+  import AddCommand from "./components/AddCommand.svelte";
+  import {
+    Row,
+    Col,
+    Container,
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+  } from "sveltestrap";
   let isNight = false;
+  let isOpen = false;
+
+  function handleUpdate(event: any) {
+    isOpen = event.detail.isOpen;
+  }
 </script>
 
 <ReadFromUrl bind:currentContent={$currentContent} />
-<div class="container">
-  <div class="menu">
-    <!-- https://support.microsoft.com/en-us/topic/how-to-remove-underlines-from-hyperlinks-that-use-frontpage-2003-4702ea91-395a-38d7-9cf7-04672ada2bbc -->
-    <a target="_blank" href="https://github.com/wuyudi/svelte-jsxgraph">
-      github repository</a
-    >
-    <div>
-      <Demo bind:currentContent={$currentContent} />
-    </div>
-    <div>
-      <ReadInFile bind:currentContent={$currentContent} />
-    </div>
-    <div>
-      <NightMode bind:isNight />
-    </div>
-    <div>
-      <SaveLoadConfig bind:itemList />
-    </div>
-  </div>
-  <!-- https://stackoverflow.com/questions/4619668/executing-script-injected-by-innerhtml-after-ajax-call -->
 
-  <div class="plot">
-    <div class="current">
-      <CurrentCommand bind:itemList />
-      <CurrentContent bind:currentContent={$currentContent} />
-    </div>
-    <div class="img">
-      <div id="jxgbox" class="jxgbox" style="height: 560px;width=400px;" />
-    </div>
-  </div>
-  <div class="AddCommand">
-    <AddCommand bind:itemList />
-  </div>
-  <div class="SaveToFile">
-    <SaveToFile currentContent={$currentContent} />
-  </div>
-</div>
+<Container>
+  <Row>
+    <Row>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand
+          href="https://github.com/wuyudi/svelte-jsxgraph"
+          target="_blank">Svelte-jsxgraph</NavbarBrand
+        >
+        <NavbarToggler on:click={() => (isOpen = !isOpen)} />
+        <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+          <Nav class="ms-auto" navbar>
+            <NavItem>
+              <ReadInFile bind:currentContent={$currentContent} />
+            </NavItem>
+            <NavItem>
+              <Demo bind:currentContent={$currentContent} />
+            </NavItem>
+            <NavItem>
+              <NightMode bind:isNight />
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </Row>
+    <Row>
+      <Col class="col-4">
+        <CurrentContent bind:currentContent={$currentContent} />
+      </Col>
+      <Col id="jxgbox" class="jxgbox" style="height: 500px;" />
+    </Row>
+    <Row>
+      <AddCommand />
+    </Row>
+    <Row>
+      <SaveToFile currentContent={$currentContent} />
+    </Row>
+  </Row>
+</Container>
 {#if isNight}
   <style>
     :not(.img > *):not(foreignObject):not(.jxgbox) {
@@ -60,23 +74,3 @@
     }
   </style>
 {/if}
-
-<style>
-  .container {
-    display: grid;
-    grid-template-rows: 5% auto 7% 5%;
-  }
-  .menu {
-    display: flex;
-    justify-content: space-between;
-  }
-  .plot {
-    display: grid;
-    grid-template-columns: 40% auto;
-  }
-  .current {
-    display: grid;
-    grid-template-rows: max-content;
-    max-height: 600px;
-  }
-</style>

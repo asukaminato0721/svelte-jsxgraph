@@ -1,7 +1,4 @@
 {
-  "itemList": [
-    { "cmd": "let point = board.create('point', [1.0, 1.0]);", "id": 0 }
-  ],
   "Templates_comment": "copy templates from here https://jsxgraph.uni-bayreuth.de/docs/symbols/Angle.html",
   "Templates": [
     "let angle = board.create('angle', [p1, p2, p3]);",
@@ -54,6 +51,7 @@
     "let perp1 = board.create('perpendicularsegment', [l1, p3]);",
     "let l1 = board.create('polarline', [c1, p6]);",
     "let p8 = board.create('polepoint', [c1, l1]);",
+    "var p1 = board.create('point', [3.5, 2.0]);",
     "let pol = board.create('polygon', [p1, p2, p3, p4]);",
     "let r1 = board.create('radicalaxis', [c1, c2]);",
     "let rp1 = board.create('reflection', [p3, l1]);",

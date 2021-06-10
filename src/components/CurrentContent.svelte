@@ -1,5 +1,6 @@
 <script lang="ts">
   export let currentContent: string;
+  import { Input } from "sveltestrap";
   let hint = "";
   $: setTimeout(() => {
     try {
@@ -11,13 +12,4 @@
   }, 400);
 </script>
 
-<textarea id="jscode" name="jscode" bind:value={currentContent} />
-{hint}
-
-<style>
-  textarea {
-    height: 340px;
-    margin: 0%;
-    overflow-y: scroll;
-  }
-</style>
+<Input rows={22} type="textarea" id="jscode" bind:value={currentContent} />

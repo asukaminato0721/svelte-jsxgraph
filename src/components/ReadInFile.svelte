@@ -1,5 +1,6 @@
 <script lang="ts">
   let files: FileList;
+  import { Input } from "sveltestrap";
   export let currentContent: string;
   function readFileContent(file: File): Promise<string | ArrayBuffer> {
     const reader = new FileReader();
@@ -19,4 +20,4 @@
   }
 </script>
 
-<big>load file </big><input type="file" bind:files accept=".html" />
+<Input type="file" bind:files accept=".html" />
