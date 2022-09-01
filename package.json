@@ -27,7 +27,7 @@
   "dependencies": {
     "file-saver": "^2.0.5",
     "insert-text-at-cursor": "^0.3.0",
-    "jszip": "^3.7.0",
+    "jszip": "^3.10.1",
     "sirv-cli": "^2.0.1",
     "svelte-select": "^4.4.7",
     "svelte-simple-modal": "^1.2.0",
