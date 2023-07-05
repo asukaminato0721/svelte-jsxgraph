@@ -10,9 +10,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install pnpm 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.0.2
+      - name: install and build
         run: |
-          curl -fsSL https://get.pnpm.io/install.sh | SHELL=`which bash` bash -
-          source /home/runner/.bashrc
-          pnpm install
-          pnpm run build
+            pnpm install
+            pnpm run build
