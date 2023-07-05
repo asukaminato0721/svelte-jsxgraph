@@ -1,6 +1,5 @@
 <script lang="ts">
   import constants from "../constants/constants.json";
-  import Select from "svelte-select";
   import insertTextAtCursor from "insert-text-at-cursor";
   import { Button, Row, Col } from "sveltestrap";
   let addCommand: { index: number; value: string };
@@ -12,13 +11,6 @@
 </script>
 
 <Row>
-  <Col>
-    <Select
-      bind:selectedValue={addCommand}
-      items={select_item}
-      placeholder="type in command"
-    />
-  </Col>
   <Col class="col-3">
     <select class="form-select" bind:value={addCommand}>
       <option selected>choose command</option>
@@ -32,7 +24,7 @@
       on:click={() => {
         insertTextAtCursor(
           document.getElementById("jscode"),
-          addCommand.value + "\n"
+          addCommand + "\n"
         );
       }}>insert</Button
     >

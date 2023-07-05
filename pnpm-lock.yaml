@@ -17,9 +17,6 @@ dependencies:
   sirv-cli:
     specifier: ^2.0.2
     version: 2.0.2
-  svelte-select:
-    specifier: ^4.4.7
-    version: 4.4.7
   svelte-simple-modal:
     specifier: ^1.5.2
     version: 1.6.1(svelte@3.59.2)
@@ -1186,10 +1183,6 @@ packages:
       svelte: 3.59.2
       typescript: 4.9.5
     dev: true
-
-  /svelte-select@4.4.7:
-    resolution: {integrity: sha512-fIf9Z8rPI6F8naHZ9wjXT0Pv5gLyhdHAFkHFJnCfVVfELE8e82uOoF0xEVQP6Kir+b4Q5yOvNAzZ61WbSU6A0A==}
-    dev: false
 
   /svelte-simple-modal@1.6.1(svelte@3.59.2):
     resolution: {integrity: sha512-D4/Z7LQ6ThawYb7FlAeS/qGbcwVlqzRHn1zZgWPlEK0cp4l2UMcscqel58mp+gTuk4UX9gl516GYXcHFvuyslA==}

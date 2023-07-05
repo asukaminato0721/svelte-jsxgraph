@@ -29,7 +29,6 @@
     "insert-text-at-cursor": "^0.3.0",
     "jszip": "^3.10.1",
     "sirv-cli": "^2.0.2",
-    "svelte-select": "^4.4.7",
     "svelte-simple-modal": "^1.5.2",
     "sveltestrap": "^5.9.0"
   }
